@@ -12,9 +12,13 @@ describe('MessageView', () => {
     const view = new MessageView();
 
     const buttonEl = document.querySelector('#show-message-button');
+    const inputEl = document.querySelector('#username-input')
+    
+    inputEl.value = 'this is a test message';
     buttonEl.click();
-
+    
     expect(document.querySelector('#message')).not.toBeNull();
+    expect(document.querySelector('#message').innerText).toEqual('this is a test message')
   });
 
   it('remove the message ', () => {
